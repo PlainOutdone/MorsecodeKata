@@ -11,10 +11,12 @@ namespace Morsecode.Domain.Translator
         {
             return new Dictionary<string, string>()
             {
-                {"A",".-" },
-                {"B","-..." },
-                {"C","-.-." },
-                {"D","-.." }
+
+                {" "," " },
+                {".-","A" },
+                {"-...","B" },
+                {"-.-.","C" },
+                {"-..","D" }
             };
 
         }
