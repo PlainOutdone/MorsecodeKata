@@ -11,7 +11,6 @@ namespace Morsecode.Domain.Translator
         {
             return new Dictionary<string, string>()
             {
-
                 {" "," " },
                 {".-","A" },
                 {"-...","B" },
@@ -55,6 +54,7 @@ namespace Morsecode.Domain.Translator
 
         public string Decrypt(string input)
         {
+            if (string.IsNullOrEmpty(input)){ return " "; }
             if (_library.ContainsKey(input))
             {
                 return _library[input];

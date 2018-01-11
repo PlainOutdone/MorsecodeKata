@@ -33,5 +33,17 @@ namespace Morsecode.UnitTests
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public static void WhenGivenAValidCodedMessageWithSpacesReturnTheDecryptedVersion()
+        {
+            ICodeReader reader = new DefaultCodeReader(new DefaultSplitter(), new DefaultTranslator());
+            var input = ".... . .-.. .-.. ---  .-- --- .-. .-.. -..";
+            var expected = "HELLO WORLD";
+
+            var actual = reader.DecryptMessage(input);
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

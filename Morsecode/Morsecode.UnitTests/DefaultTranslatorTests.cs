@@ -14,6 +14,14 @@ namespace Morsecode.UnitTests
             Assert.Equal(" ", translator.Decrypt(" "));
         }
 
+        [Fact]
+        public void WhenIProvideTheTranslatorWithAEmptyStringGetASpaceBack()
+        {
+            ITranslator translator = new DefaultTranslator();
+            
+            Assert.Equal(" ", translator.Decrypt(""));
+        }
+
 
         [Fact]
         public void WhenIDecryptValuesExpectCorrectResponse()
