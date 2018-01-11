@@ -11,7 +11,7 @@ namespace Morsecode.Domain.CodeSplitter
         {
             if (String.IsNullOrEmpty(message)) { return new List<string>(); }
 
-            message = message.Replace("  ", " ");
+            message = message.Replace("  ", " "); //Avoiding any triple spaces to avoid duplicate entries on split
 
             return message.Split(" ").ToList();
         }
