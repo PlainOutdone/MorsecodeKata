@@ -38,7 +38,7 @@ namespace Morsecode.UnitTests
         public static void WhenGivenAValidCodedMessageWithSpacesReturnTheDecryptedVersion()
         {
             ICodeReader reader = new DefaultCodeReader(new DefaultSplitter(), new DefaultTranslator());
-            var input = ".... . .-.. .-.. ---  .-- --- .-. .-.. -..";
+            var input = ".... . .-.. .-.. ---   .-- --- .-. .-.. -..";
             var expected = "HELLO WORLD";
 
             var actual = reader.DecryptMessage(input);

@@ -34,5 +34,23 @@ namespace Morsecode.UnitTests
 
             Assert.Equal(expected, actual);
         }
+
+        [Fact]
+        public static void WhenGivenAMessageWithIncludedSpacesEnsureTheyAreSplitCorrectly()
+        {
+            ISplitter defaultSplitter = new DefaultSplitter();
+            var input = ".- -...   -.-. -..";
+            var expected = new List<string>()
+            {
+                {".-" },
+                {"-..." },
+                {"" },
+                {"-.-." },
+                {"-.." }
+            };
+            var actual = defaultSplitter.SplitMessage(input);
+
+            Assert.Equal(expected, actual);
+        }
     }
 }

@@ -10,6 +10,9 @@ namespace Morsecode.Domain.CodeSplitter
         public List<string> SplitMessage(string message)
         {
             if (String.IsNullOrEmpty(message)) { return new List<string>(); }
+
+            message = message.Replace("  ", " ");
+
             return message.Split(" ").ToList();
         }
     }
